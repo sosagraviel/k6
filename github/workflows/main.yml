@@ -1,9 +1,5 @@
 name: Load testing workflow
-on:
-  push:
-    branches: [ "master" ]
-    pull_request:
-      branches: [ "master" ]
+on: [push,workflow_dispatch]
 
 jobs:
   test:
@@ -13,6 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run k6 local test
-        uses: k6io/actions@v0.1
+        uses: k6io/action@v0.1
         with:
           filename: sample.js
