@@ -1,5 +1,8 @@
 name: Load testing workflow
-on:[push,workflow_dispatch]
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
 jobs:
   test:
     name: Run load test
