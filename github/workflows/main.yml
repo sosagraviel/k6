@@ -1,8 +1,11 @@
 name: Load testing workflow
-on[push,workflow_dispatch]
+on:
+  push:
+    branches: [ "master" ]
+    pull_request:
+      branches: [ "master" ]
 
-
-job:
+jobs:
   test:
     name: Run load test
     runs-on: ubuntu-latest
